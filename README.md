@@ -40,7 +40,27 @@ This stage involves extracting relevant fields like title, explanation, url, and
 The transformed data is loaded into a Postgres table using PostgresHook.
 If the target table doesn’t exist in the Postgres database, it is created automatically as part of the DAG using a create table task.
 
+![alt text](image-2.png)
+
 ## Output Screenshots
 
 Successful local implementation
 ![alt text](image-1.png)
+
+### Other resources:
+https://api.nasa.gov/
+
+### astro basic commands to run airflow from terminal 
+    • Astro dev init
+    • Astro dev start
+    • Astro dev stop
+    • Astro dev restart(for changed code)
+
+### High-level DAG tasks
+- step 1: Create the table if it does not exist
+- step 2: Extract the NASA API Data(APOD)-Astronomy Picture of the Day[Extract pipeline]
+- step 3: Transform the data(Pick the information that i need to save)
+- step 4:  Load the data into Postgres SQL
+- step 5: Verify the data DBViewer
+- step 6: Define the task dependencies
+
